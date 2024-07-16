@@ -24,9 +24,12 @@ model User {
   photo                String    @default("default.jpg")
   role                 Role      @default(USER)
   password             String
-  passwordConfirm      String
+  passwordConfirm      String?
   passwordChangedAt    DateTime?
   passwordResetToken   String?
   passwordResetExpires DateTime?
   active               Boolean   @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
